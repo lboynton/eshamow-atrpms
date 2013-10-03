@@ -52,7 +52,7 @@ class atrpms {
       path => '/etc/pki/rpm-gpg/RPM-GPG-KEY.atrpms',
     }
   } else {
-      notice ("Your operating system ${::operatingsystem} will not have the EPEL repository applied")
+      notice ("Your operating system ${::operatingsystem} will not have the ATrpms repository applied")
   }
 
 }
