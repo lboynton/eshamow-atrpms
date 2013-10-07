@@ -11,11 +11,11 @@
 #
 # Eric Shamow <eric@puppetlabs.com>
 #
-class atrpms {
+class atrpms ( $proxy = $atrpms::params::proxy ) inherits atrpms::params {
   if $::osfamily == 'RedHat' and $::operatingsystem != 'Fedora' {
     yumrepo { 'atrpms':
       baseurl  => "http://dl.atrpms.net/el${::os_maj_version}-${::architecture}/atrpms/stable",
-      proxy    => $atrpms::params::proxy,
+      proxy    => $proxy,
       enabled  => '1',
       gpgcheck => '1',
       gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY.atrpms',
@@ -24,7 +24,7 @@ class atrpms {
 
     yumrepo { 'atrpms-testing':
       baseurl  => "http://dl.atrpms.net/el${::os_maj_version}-${::architecture}/atrpms/testing",
-      proxy    => $atrpms::params::proxy,
+      proxy    => $proxy,
       enabled  => '0',
       gpgcheck => '1',
       gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY.atrpms',
@@ -33,7 +33,7 @@ class atrpms {
 
     yumrepo { 'atrpms-bleeding':
       baseurl  => "http://dl.atrpms.net/el${::os_maj_version}-${::architecture}/atrpms/bleeding",
-      proxy    => $atrpms::params::proxy,
+      proxy    => $proxy,
       enabled  => '0',
       gpgcheck => '1',
       gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY.atrpms',
