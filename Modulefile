@@ -1,4 +1,4 @@
-project_page 'http://github.com/stahnma/puppet-module-epel'
+project_page 'http://github.com/eshamow/eshamow-atrpms'
 name    'eshamow-atrpms'
 version '0.0.2'
 source 'http://github.com/eshamow/eshamow-atrpms'
